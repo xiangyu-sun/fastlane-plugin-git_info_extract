@@ -1,3 +1,4 @@
 lane :test do
-  git_info_extract
+ author = Actions.last_git_commit_formatted_with('%an')
+  git_info_extract(author:author)
 end

@@ -5,7 +5,7 @@ module Fastlane
         
         author = params[:author]
 
-        latestSquashCommitLog = sh ("git log -n 1 --date-order --pretty='%B' --branches=develop* --author=#{{author}}*").chomp
+        latestSquashCommitLog = sh ("git log -n 1 --date-order --pretty='%B' --branches=develop* --author=#{author.shellescape}*").chomp
 
         latestSquashCommitLog
       end
